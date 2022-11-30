@@ -1,4 +1,4 @@
-from emp_csi import file_open, insert, show_rows
+from emp_csi import file_open, insert, show_rows, save
 
 FILENAME = "data.csv"
 
@@ -22,6 +22,8 @@ while True:
         file_open(FILENAME)
     elif action == "2":
         insert(input('фио: '), input('возраст: '), input('телефон: '), input('отдел: '))
+    elif action == "6":
+        save(FILENAME)
     elif action == "7":
         show_rows()
     elif action == "exit":

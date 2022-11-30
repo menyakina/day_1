@@ -25,6 +25,15 @@ def insert(fio, age, tel, otd):
     print("Данные добавлены")
 
 
+def save(file_name):
+    with open(file_name, 'w', encoding='utf-8') as file:
+        columns = ("ном", "фио", "возраст", "телефон", "отдел")
+        writer = csv.DictWriter(file, fieldnames=columns)
+        writer.writeheader()
+        writer.writerows(csv_file)
+        print("Данные сохранены")
+
+
 def show_rows():
     if len(csv_file) > 0:
         print("{:<5}{:<25}{:<8}{:<12}{:<15}" .format("ном", "фио", "возраст", "телефон", "отдел"))
